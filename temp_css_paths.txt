@@ -1,0 +1,30 @@
+D:\Projects\E-Commerce\frontend\.next\dev\static\chunks\[root-of-the-server]__36b083e1._.css
+D:\Projects\E-Commerce\frontend\.next\dev\static\chunks\app_globals_css_bad6b30c._.single.css
+D:\Projects\Procurement Portal\Procurement Portal\publish\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-grid.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish_new\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-grid.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish_new\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish_new\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish_new\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish_new\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish_new\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish_new\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish_new\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish_package\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-grid.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish_package\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish_package\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish_package\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish_package\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish_package\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish_package\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+D:\Projects\Procurement Portal\Procurement Portal\publish_package\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+D:\Projects\Procurement Portal\Procurement Portal\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+D:\Projects\Procurement Portal\Procurement Portal\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+D:\Projects\Procurement Portal\Procurement Portal\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+D:\Projects\Procurement Portal\Procurement Portal\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
