@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 import BarcodeScanner from '../components/BarcodeScanner';
 
-const API_BASE = import.meta.env.VITE_API_BASE || '/api';
+const API_BASE = import.meta.env.VITE_API_BASE || '';
 
 const PrecisionPOS = ({ currentSession, onSaleSuccess }) => {
     const [products, setProducts] = useState([]);
@@ -55,7 +55,7 @@ const PrecisionPOS = ({ currentSession, onSaleSuccess }) => {
     const handlePrintDayReport = async (sessionId) => {
         try {
             const numericSessionId = Number(sessionId); // Ensure sessionId is a number
-            const res = await axios.get(`${API_BASE}/sessions/report/${numericSessionId}`);
+            const res = await axios.get(`${API_BASE}/api/sessions/report/${numericSessionId}`);
             setDayReportData(res.data);
             setShowDayReport(true);
             setTimeout(() => {
@@ -87,7 +87,7 @@ const PrecisionPOS = ({ currentSession, onSaleSuccess }) => {
     const handleAddExpense = async () => {
         if (!newExpense.amount || Number(newExpense.amount) <= 0) return alert("Please enter a valid amount");
         try {
-            await axios.post(`${API_BASE}/expenses`, {
+            await axios.post(`${API_BASE}/api/expenses`, {
                 session_id: currentSession.id,
                 amount: Number(newExpense.amount),
                 description: newExpense.description || 'Miscellaneous Expense'
@@ -129,7 +129,7 @@ const PrecisionPOS = ({ currentSession, onSaleSuccess }) => {
 
     const fetchProducts = async () => {
         try {
-            const res = await axios.get(`${API_BASE}/products`);
+            const res = await axios.get(`${API_BASE}/api/products`);
             setProducts(Array.isArray(res.data) ? res.data : []);
         } catch (err) { console.error(err); }
     };
@@ -138,7 +138,7 @@ const PrecisionPOS = ({ currentSession, onSaleSuccess }) => {
 
     const fetchCustomers = async () => {
         try {
-            const res = await axios.get(`${API_BASE}/customers`);
+            const res = await axios.get(`${API_BASE}/api/customers`);
             setCustomers(Array.isArray(res.data) ? res.data : []);
         } catch (err) { console.error(err); }
     };
@@ -162,7 +162,7 @@ const PrecisionPOS = ({ currentSession, onSaleSuccess }) => {
             return;
         }
         try {
-            const res = await axios.post(`${API_BASE}/customers`, newCustomer);
+            const res = await axios.post(`${API_BASE}/api/customers`, newCustomer);
             setCustomers([...customers, res.data]);
             setSelectedCustomer(res.data);
             setShowAddCustomer(false);
@@ -264,7 +264,7 @@ const PrecisionPOS = ({ currentSession, onSaleSuccess }) => {
             return;
         }
         try {
-            const response = await axios.post(`${API_BASE}/sales`, {
+            const response = await axios.post(`${API_BASE}/api/sales`, {
                 items: cart,
                 total_amount: finalTotal,
                 discount,

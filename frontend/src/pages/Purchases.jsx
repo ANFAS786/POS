@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import axios from 'axios';
 import { Truck, Plus, Trash2, Save, Search, Calendar, FileText, User, ShoppingCart, Info, Clock, Printer } from 'lucide-react';
 
-const API_BASE = import.meta.env.VITE_API_BASE || '/api';
+const API_BASE = import.meta.env.VITE_API_BASE || '';
 
 const Purchases = ({ settings }) => {
     const [products, setProducts] = useState([]);
@@ -24,7 +24,7 @@ const Purchases = ({ settings }) => {
 
     const fetchProducts = async () => {
         try {
-            const res = await axios.get(`${API_BASE}/products`);
+            const res = await axios.get(`${API_BASE}/api/products`);
             setProducts(Array.isArray(res.data) ? res.data : []);
         } catch (err) {
             console.error('Error fetching products', err);
@@ -33,7 +33,7 @@ const Purchases = ({ settings }) => {
 
     const fetchHistory = async () => {
         try {
-            const res = await axios.get(`${API_BASE}/purchases`);
+            const res = await axios.get(`${API_BASE}/api/purchases`);
             setHistory(res.data);
         } catch (err) {
             console.error('Error fetching history', err);
@@ -42,7 +42,7 @@ const Purchases = ({ settings }) => {
 
     const fetchOrderDetails = async (order) => {
         try {
-            const res = await axios.get(`${API_BASE}/purchases/${order.id}`);
+            const res = await axios.get(`${API_BASE}/api/purchases/${order.id}`);
             setOrderItems(res.data);
             setSelectedOrder(order);
         } catch (err) {
@@ -95,7 +95,7 @@ const Purchases = ({ settings }) => {
     const handleSavePurchase = async () => {
         if (!supplier || purchaseItems.length === 0) return alert('Please fill supplier and items');
         try {
-            await axios.post(`${API_BASE}/purchases`, {
+            await axios.post(`${API_BASE}/api/purchases`, {
                 supplier_name: supplier,
                 invoice_number: invoice,
                 items: purchaseItems,

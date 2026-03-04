@@ -8,7 +8,7 @@ import axios from 'axios';
 import './index.css';
 import Calculator from './components/Calculator';
 
-const API_BASE = import.meta.env.VITE_API_BASE || '/api';
+const API_BASE = import.meta.env.VITE_API_BASE || '';
 
 function App() {
   const [activeTab, setActiveTab] = useState('inventory');
@@ -37,14 +37,14 @@ function App() {
 
   const fetchSessionStatus = async () => {
     try {
-      const res = await axios.get(`${API_BASE}/sessions/status`);
+      const res = await axios.get(`${API_BASE}/api/sessions/status`);
       setCurrentSession(res.data);
     } catch (err) { console.error(err); }
   };
 
   const fetchSettings = async () => {
     try {
-      const res = await axios.get(`${API_BASE}/settings`);
+      const res = await axios.get(`${API_BASE}/api/settings`);
       setSettings(res.data);
     } catch (err) { console.error(err); }
   };
@@ -52,7 +52,7 @@ function App() {
   const handleDayOpen = async () => {
     if (!openingAmount) return alert("Enter opening cash");
     try {
-      const res = await axios.post(`${API_BASE}/sessions/open`, { opening_amount: Number(openingAmount) });
+      const res = await axios.post(`${API_BASE}/api/sessions/open`, { opening_amount: Number(openingAmount) });
       setCurrentSession(res.data);
       setShowDayOpenModal(false);
       setOpeningAmount('');
@@ -63,7 +63,7 @@ function App() {
   const handleDayClose = async () => {
     if (!window.confirm("If you close the day, all data will be restored and a day report will be generated. Continue?")) return;
     try {
-      const res = await axios.post(`${API_BASE}/sessions/close`);
+      const res = await axios.post(`${API_BASE}/api/sessions/close`);
       const sessionId = res.data.sessionId;
 
       // Trigger Report Printing

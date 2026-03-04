@@ -5,7 +5,7 @@ import { Package, Plus, AlertTriangle, Edit, Trash2, Search, Filter, TrendingUp,
 import Barcode from 'react-barcode';
 import BarcodeScanner from '../components/BarcodeScanner';
 
-const API_BASE = import.meta.env.VITE_API_BASE || '/api';
+const API_BASE = import.meta.env.VITE_API_BASE || '';
 
 const Inventory = ({ currentSession }) => {
     const [products, setProducts] = useState([]);
@@ -48,7 +48,7 @@ const Inventory = ({ currentSession }) => {
 
     const fetchProducts = async () => {
         try {
-            const res = await axios.get(`${API_BASE}/products`);
+            const res = await axios.get(`${API_BASE}/api/products`);
             setProducts(Array.isArray(res.data) ? res.data : []);
         } catch (err) {
             console.error('Error fetching products', err);
@@ -61,7 +61,7 @@ const Inventory = ({ currentSession }) => {
             return;
         }
         try {
-            const res = await axios.get(`${API_BASE}/sessions/report/${currentSession.id}`);
+            const res = await axios.get(`${API_BASE}/api/sessions/report/${currentSession.id}`);
             setStats(res.data || { total_bills: 0, total_revenue: 0, total_profit: 0, total_cash: 0, total_card: 0, total_online: 0, total_expenses: 0, top_item: null });
         } catch (err) { console.error(err); }
     };
@@ -69,7 +69,7 @@ const Inventory = ({ currentSession }) => {
     const handleAddExpense = async () => {
         if (!newExpense.amount || Number(newExpense.amount) <= 0) return alert("Please enter a valid amount");
         try {
-            await axios.post(`${API_BASE}/expenses`, {
+            await axios.post(`${API_BASE}/api/expenses`, {
                 session_id: currentSession.id,
                 amount: Number(newExpense.amount),
                 description: newExpense.description || 'Miscellaneous Expense'
@@ -118,9 +118,9 @@ const Inventory = ({ currentSession }) => {
             }
 
             if (finalProduct.id) {
-                await axios.put(`${API_BASE}/products/${finalProduct.id}`, finalProduct);
+                await axios.put(`${API_BASE}/api/products/${finalProduct.id}`, finalProduct);
             } else {
-                await axios.post(`${API_BASE}/products`, finalProduct);
+                await axios.post(`${API_BASE}/api/products`, finalProduct);
             }
             setShowModal(false);
             setNewProduct({ name: '', category: '', barcode: '', uom: 'Pcs', cost_price: 0, selling_price: 0, stock_quantity: 0, min_stock_level: 5, bulk_add_qty: 0 });
@@ -134,7 +134,7 @@ const Inventory = ({ currentSession }) => {
     const handleDeleteProduct = async (id) => {
         if (!window.confirm('Are you sure you want to delete this product?')) return;
         try {
-            await axios.delete(`${API_BASE}/products/${id}`);
+            await axios.delete(`${API_BASE}/api/products/${id}`);
             fetchProducts();
         } catch (err) {
             alert('Failed to delete product');

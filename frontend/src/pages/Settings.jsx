@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Settings as SettingsIcon, Save, Store, MapPin, Phone, Image, Globe, ShieldCheck, Activity, Cpu } from 'lucide-react';
 
-const API_BASE = import.meta.env.VITE_API_BASE || '/api';
+const API_BASE = import.meta.env.VITE_API_BASE || '';
 
 const Settings = () => {
     const [settings, setSettings] = useState({
@@ -20,7 +20,7 @@ const Settings = () => {
 
     const fetchSettings = async () => {
         try {
-            const res = await axios.get(`${API_BASE}/settings`);
+            const res = await axios.get(`${API_BASE}/api/settings`);
             setSettings(res.data);
             setLoading(false);
         } catch (err) {
@@ -33,7 +33,7 @@ const Settings = () => {
         e.preventDefault();
         setSaving(true);
         try {
-            await axios.put(`${API_BASE}/settings`, settings);
+            await axios.put(`${API_BASE}/api/settings`, settings);
             alert('Infrastructure configuration updated successfully.');
             window.location.reload();
         } catch (err) {
